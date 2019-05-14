@@ -75,7 +75,7 @@ public class ChatsFragment extends Fragment {
                 if (dataSnapshot.exists()) {
                     chatsArrayList.clear();
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                        Log.d(TAG, "hahaha : " + snapshot.getValue(User.class));
+                        Log.d(TAG, "hahaha : " + snapshot.getValue(Chat.class));
                         Chat chat = snapshot.getValue(Chat.class);
                         chatsArrayList.add(chat);
                         chatsAdapter.notifyDataSetChanged();
