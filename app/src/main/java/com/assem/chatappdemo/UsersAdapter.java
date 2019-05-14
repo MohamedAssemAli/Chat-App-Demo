@@ -1,11 +1,10 @@
 package com.assem.chatappdemo;
 
 import android.content.Context;
-import android.media.Image;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -41,7 +40,9 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UserHolder> 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            
+                Intent intent = new Intent(context, ChatActivity.class);
+                intent.putExtra("user_id", user.getId());
+                context.startActivity(intent);
             }
         });
     }

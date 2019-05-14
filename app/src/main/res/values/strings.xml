@@ -16,5 +16,6 @@
     <string name="lorem_1">John &amp; Sara wedding</string>
     <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
     <string name="username_holder">Username</string>
+    <string name="chat_holder">Type a message...</string>
 
 </resources>
