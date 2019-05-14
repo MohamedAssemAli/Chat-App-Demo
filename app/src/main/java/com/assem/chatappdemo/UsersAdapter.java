@@ -38,6 +38,12 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UserHolder> 
     public void onBindViewHolder(@NonNull UserHolder holder, int position) {
         final User user = usersArrayList.get(position);
         holder.userEmail.setText(user.getEmail());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            
+            }
+        });
     }
 
     @Override

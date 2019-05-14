@@ -12,6 +12,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
 import butterknife.BindView;
@@ -33,9 +34,8 @@ public class SignUpActivity extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                     @Override
                     public void onSuccess(AuthResult authResult) {
-                        FirebaseDatabase.getInstance().getReference().child("users").child(authResult.getUser().getUid()).setValue(new User(email, password));
+                        FirebaseDatabase.getInstance().getReference().child("users").child(authResult.getUser().getUid()).setValue(new User(authResult.getUser().getUid(), email, password));
                         startActivity(new Intent(SignUpActivity.this, MainActivity.class));
-
                     }
                 })
                 .addOnFailureListener(e -> Toast.makeText(SignUpActivity.this, R.string.error, Toast.LENGTH_LONG).show());
