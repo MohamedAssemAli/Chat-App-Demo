@@ -5,4 +5,16 @@
     <string name="sign_up">Sign up</string>
     <string name="sign_in">Sign in</string>
     <string name="error">Error</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="chats">Chats</string>
+    <string name="users">Users</string>
+    <string name="no_chats">You have no chats yet</string>
+    <string name="no_users">No users in the app :((</string>
+    <string name="seen">Seen</string>
+    <string name="lorem_1">John &amp; Sara wedding</string>
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="username_holder">Username</string>
+
 </resources>
