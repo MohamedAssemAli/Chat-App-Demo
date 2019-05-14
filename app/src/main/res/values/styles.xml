@@ -1,11 +1,108 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="TextInputLayout">
+        <item name="android:layout_marginTop">@dimen/margin_padding_size_micro</item>
+        <item name="android:layout_marginBottom">@dimen/margin_padding_size_micro</item>
+        <item name="android:layout_marginEnd">@dimen/margin_padding_size_micro</item>
+        <item name="android:layout_marginStart">@dimen/margin_padding_size_micro</item>
+        <item name="android:textColorHint">@color/color_secondary_text</item>
+        <item name="android:paddingTop">@dimen/margin_padding_size_micro</item>
+    </style>
+
+
+    <style name="TextInputEditText">
+        <item name="android:minHeight">52dp</item>
+        <item name="android:layout_marginStart">@dimen/margin_padding_size_micro</item>
+        <item name="android:layout_marginEnd">@dimen/margin_padding_size_micro</item>
+        <item name="android:paddingStart">@dimen/margin_padding_size_medium</item>
+        <item name="android:paddingEnd">@dimen/margin_padding_size_medium</item>
+        <item name="android:paddingTop">@dimen/margin_padding_size_small</item>
+        <item name="android:drawablePadding">@dimen/margin_padding_size_small</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:drawableTint">@color/colorPrimary</item>
+        <item name="android:textColorHint">@color/color_secondary_text</item>
+        <item name="android:background">@drawable/edit_text_bg</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:maxLines">1</item>
+        <item name="fontFamily">@font/font_bold</item>
+    </style>
+
+    <style name="chat_edit_text">
+        <item name="android:minHeight">48dp</item>
+        <item name="android:layout_marginStart">@dimen/margin_padding_size_micro</item>
+        <item name="android:layout_marginEnd">@dimen/margin_padding_size_micro</item>
+        <item name="android:paddingStart">@dimen/margin_padding_size_medium</item>
+        <item name="android:paddingEnd">@dimen/margin_padding_size_medium</item>
+        <item name="android:paddingTop">@dimen/margin_padding_size_small</item>
+        <item name="android:drawablePadding">@dimen/margin_padding_size_small</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:drawableTint">@color/colorPrimary</item>
+        <item name="android:textColorHint">@color/color_secondary_text</item>
+        <item name="android:background">@drawable/chat_edit_text_bg</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">@font/font_bold</item>
+    </style>
+
+    <style name="button_style">
+        <item name="background">@drawable/button</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!--secondary text style-->
+    <style name="secondary_text">
+        <item name="android:textColor">@color/color_secondary_text</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
+    </style>
+
+    <style name="secondary_text_bold" parent="secondary_text">
+        <item name="fontFamily">@font/font_bold</item>
+    </style>
+
+    <style name="secondary_text_regular" parent="secondary_text">
+        <item name="fontFamily">@font/font_regular</item>
+    </style>
+
+    <!--primary text style-->
+    <style name="primary_text">
+        <item name="android:textColor">@color/color_primary_text</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
+    </style>
+
+    <style name="primary_text_bold" parent="primary_text">
+        <item name="fontFamily">@font/font_bold</item>
+    </style>
+
+    <style name="primary_text_regular" parent="primary_text">
+        <item name="fontFamily">@font/font_regular</item>
+    </style>
+
+    <!--color primary text style-->
+    <style name="color_primary_text">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
+    </style>
+
+    <style name="color_primary_text_bold" parent="color_primary_text">
+        <item name="fontFamily">@font/font_bold</item>
+    </style>
+
+    <style name="logo_text" parent="color_primary_text">
+        <item name="fontFamily">@font/logo_font</item>
+    </style>
+
+    <style name="MenuStyle" parent="Theme.AppCompat.Light">
+        <item name="android:background">@android:color/white</item>
     </style>
 
 </resources>
