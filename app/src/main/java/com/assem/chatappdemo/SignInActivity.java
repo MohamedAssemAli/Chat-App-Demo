@@ -31,7 +31,6 @@ public class SignInActivity extends AppCompatActivity {
         FirebaseAuth.getInstance().signInWithEmailAndPassword(emailTxt.getText().toString(), passwordTxt.getText().toString())
                 .addOnSuccessListener(authResult -> {
                     startActivity(new Intent(SignInActivity.this, MainActivity.class));
-
                 })
                 .addOnFailureListener(e -> Toast.makeText(SignInActivity.this, R.string.error, Toast.LENGTH_LONG).show());
     }

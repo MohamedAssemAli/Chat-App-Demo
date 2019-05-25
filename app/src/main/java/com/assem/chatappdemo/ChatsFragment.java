@@ -17,6 +17,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -35,6 +37,7 @@ public class ChatsFragment extends Fragment {
     private ChatsAdapter chatsAdapter;
     // Firebase
     private DatabaseReference mRef;
+    private FirebaseAuth mAuth;
     // Views
     @BindView(R.id.progress_layout)
     RelativeLayout progressLayout;
@@ -57,12 +60,22 @@ public class ChatsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_chats, container, false);
         ButterKnife.bind(this, view);
         mRef = FirebaseDatabase.getInstance().getReference();
+        mAuth = FirebaseAuth.getInstance();
         chatsArrayList = new ArrayList<>();
         mRef = FirebaseDatabase.getInstance().getReference();
         chatsAdapter = new ChatsAdapter(requireContext(), chatsArrayList);
         chatsRecycler.setAdapter(chatsAdapter);
         new ViewsUtils().setupLinearVerticalRecView(requireContext(), chatsRecycler);
         getChats();
+
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser == null) {
+            Log.d(TAG, "No logged user");
+            Toast.makeText(requireContext(), "No logged user", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(requireContext(), currentUser.getUid(), Toast.LENGTH_LONG).show();
+
+        }
         return view;
     }
 

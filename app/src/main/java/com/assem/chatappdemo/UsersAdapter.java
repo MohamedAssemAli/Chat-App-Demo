@@ -11,6 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.util.ArrayList;
 
 import butterknife.BindView;
@@ -41,7 +43,8 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UserHolder> 
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, ChatActivity.class);
-                intent.putExtra("user_id", user.getId());
+                intent.putExtra("receiver_user_id", user.getId());
+                intent.putExtra("sender_user_id", FirebaseAuth.getInstance().getCurrentUser().getUid());
                 context.startActivity(intent);
             }
         });

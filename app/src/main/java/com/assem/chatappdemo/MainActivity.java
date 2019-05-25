@@ -2,6 +2,8 @@ package com.assem.chatappdemo;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
@@ -17,7 +19,8 @@ import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
 
-    FirebaseAuth mAuth;
+    private static final String TAG = ChatActivity.class.getSimpleName();
+    private FirebaseAuth mAuth;
     // Views
     @BindView(R.id.activity_main_tab_layout)
     TabLayout tabLayout;
@@ -41,6 +44,14 @@ public class MainActivity extends AppCompatActivity {
         viewPagerAdapter.addFragment(new ChatsFragment(), getString(R.string.chats));
         viewPagerAdapter.addFragment(new UsersFragment(), getString(R.string.users));
         new ViewsUtils().setupTabLayout(viewPager, viewPagerAdapter, tabLayout, 0);
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser == null) {
+            Log.d(TAG, "No logged user");
+            Toast.makeText(this, "No logged user", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(this, currentUser.getUid(), Toast.LENGTH_LONG).show();
+
+        }
     }
 
     @Override
